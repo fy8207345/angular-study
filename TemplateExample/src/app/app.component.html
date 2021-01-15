@@ -1,0 +1,26 @@
+You have selected {{customerList.selectedCustomer?.name}}
+<app-customer-list #customerList></app-customer-list>
+
+<form #testForm="ngForm" (ngSubmit)="onSubmit(testForm)">
+  <button type="submit">提交</button>
+</form>
+
+<ng-container>
+  Container's Content.
+</ng-container>
+
+<ul>
+  <ng-container *ngFor="let a of arr;">
+    <li>{{a}}</li>
+  </ng-container>
+</ul>
+
+<ng-container *ngIf="condition">
+  Condition is matched.
+</ng-container>
+
+<div [ngSwitch]="condition">
+  <ng-container *ngSwitchCase="true">True</ng-container>
+  <ng-container *ngSwitchCase="false">False</ng-container>
+  <ng-container *ngTemplateOutlet="condition">Default</ng-container>
+</div>
